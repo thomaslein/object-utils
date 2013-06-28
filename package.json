@@ -1,0 +1,13 @@
+{
+	"name": "object-utils",
+	"description": "A collection of object utilities",
+	"version": "0.1.0",
+	"author": "Alexander Pope <alexander.pope@nrk.no>",
+	"dependencies": {
+	},
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/yr/object-utils.git"
+	}
+}
