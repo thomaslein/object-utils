@@ -5,7 +5,14 @@
 	"author": "Alexander Pope <alexander.pope@nrk.no>",
 	"dependencies": {
 	},
+	"devDependencies": {
+		"mocha": "*",
+		"should": "*"
+	},
 	"main": "index.js",
+	"scripts": {
+		"test": "mocha --reporter spec --require should -t 4000"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/yr/object-utils.git"
