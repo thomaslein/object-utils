@@ -42,10 +42,8 @@ exports.inheritsFrom = function(Child, Parent) {
 			}
 			descendant = descendant.constructor.__super__;
 		}
-		return false;
-	} else {
-		log('inheritsFrom: not function', Child, Parent);
 	}
+	return false;
 };
 
 /**
