@@ -13,8 +13,6 @@
 	"scripts": {
 		"test": "mocha --reporter spec --require should -t 4000"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/yr/object-utils.git"
-	}
+	"repository": "git://github.com/yr/object-utils.git",
+	"license": "MIT"
 }
