@@ -5,24 +5,27 @@
  * @param {Function} Parent
  * @returns {Function}
  */
-exports.inherit = function(Child, Parent) {
-	//copy 'own' properties from Parent to Child
+exports.inherit = function (Child, Parent) {
+	// Copy 'own' properties from Parent to Child
 	for (var key in Parent) {
 		if (Parent.hasOwnProperty(key)) {
 			Child[key] = Parent[key];
 		}
 	}
-	//proxy constructor function
+	// Proxy constructor function
 	function Ctor() {
-		this.constructor = Child; //set constructor property to point to Child
+		// Set constructor property to point to Child
+		this.constructor = Child;
+		// Store reference to Child's 'super'
+		this.super = Parent.prototype;
 	}
-	//proxy inherits from Parent's prototype (avoid Parent instance)
+	// Proxy inherits from Parent's prototype (avoid Parent instance)
 	Ctor.prototype = Parent.prototype;
-	//Child inherits from proxy (requires an object, not function)
+	// Child inherits from proxy (requires an object, not function)
 	Child.prototype = new Ctor();
-	//store reference to Child's 'super'
-	Child.__super__ = Parent.prototype;
-	//return extended constructor function
+	// Store reference to Child's 'super'
+	Child.super = Parent.prototype;
+	// Return extended constructor function
 	return Child;
 };
 
@@ -32,15 +35,15 @@ exports.inherit = function(Child, Parent) {
  * @param {Function} Parent
  * @returns {Boolean}
  */
-exports.inheritsFrom = function(Child, Parent) {
+exports.inheritsFrom = function (Child, Parent) {
 	if (typeof Child == 'function' && typeof Parent == 'function') {
 		if (Child === Parent) return true;
-		var descendant = Child.__super__;
+		var descendant = Child.super;
 		while (descendant) {
 			if (descendant.constructor) {
 				if (descendant.constructor === Parent) return true;
 			}
-			descendant = descendant.constructor.__super__;
+			descendant = descendant.constructor.super;
 		}
 	}
 	return false;
@@ -52,7 +55,7 @@ exports.inheritsFrom = function(Child, Parent) {
  * @param {Function} fn
  * @param {Object} context
  */
-exports.bind = function(fn, context) {
+exports.bind = function (fn, context) {
 	return function() {
 		return fn.apply(context, arguments);
 	};

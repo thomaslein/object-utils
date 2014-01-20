@@ -26,9 +26,11 @@ describe('object-utils', function() {
 			this.Child.should.have.property('bar');
 		});
 
-		it('should store a reference to Parent\'s prototype as "__super__"', function() {
-			this.Child.should.have.property('__super__');
-			this.Child.__super__.should.eql(this.Parent.prototype);
+		it('should store a reference to Parent\'s prototype as "super"', function() {
+			this.Child.should.have.property('super');
+			this.Child.super.should.eql(this.Parent.prototype);
+			this.child.should.have.property('super');
+			this.child.super.should.eql(this.Parent.prototype);
 		});
 	});
 
