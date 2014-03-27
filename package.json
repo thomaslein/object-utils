@@ -1,8 +1,8 @@
 {
-	"name": "object-utils",
+	"name": "util.object",
 	"description": "A collection of object utilities",
-	"version": "0.1.2",
-	"author": "Alexander Pope <alexander.pope@nrk.no>",
+	"version": "0.0.2",
+	"author": "Thomas Lein <thomaslein@gmail.com>",
 	"dependencies": {
 	},
 	"devDependencies": {
@@ -13,6 +13,6 @@
 	"scripts": {
 		"test": "mocha --reporter spec --require should -t 4000"
 	},
-	"repository": "git://github.com/yr/object-utils.git",
+	"repository": "git://github.com/thomaslein/util.object.git",
 	"license": "MIT"
 }
