@@ -13,6 +13,5 @@
 	"scripts": {
 		"test": "mocha --reporter spec --require should -t 4000"
 	},
-	"repository": "git://github.com/thomaslein/util.object.git",
-	"license": "MIT"
+	"repository": "git://github.com/thomaslein/util.object.git"
 }
