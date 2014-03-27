@@ -4,7 +4,7 @@ var should = require('should')
 	, inheritsFrom = objectUtils.inheritsFrom
 	, bind = objectUtils.bind;
 
-describe('object-utils', function() {
+describe('util.object', function() {
 
 	describe('inherit', function() {
 		before(function() {
